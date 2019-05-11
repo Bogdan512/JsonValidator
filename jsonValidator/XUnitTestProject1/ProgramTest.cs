@@ -7,9 +7,11 @@ namespace jsonValidator
     public class ProgramTest
     {
         [Fact]
-        public void FailingTest_MethodNotImplemented()
+        public void FirstGreenTest()
         {
-            Program.ValidateJson();
+            bool expected = true;
+            bool actual = Program.ValidateJson();
+            Assert.Equal(expected, actual);
         }
     }
 }
