@@ -6,12 +6,21 @@ namespace jsonValidator
     {
         static void Main(string[] args)
         {
+            string input = Console.ReadLine();
+            ValidateJson(input);
             Console.Read();
         }
 
-        public static bool ValidateJson()
+        public static bool ValidateJson(string input)
         {
-            return true;
+            foreach (char c in input)
+            {
+                if (input[0] == '"' && input[input.Length - 1] == '"')
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

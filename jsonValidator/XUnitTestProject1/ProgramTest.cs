@@ -7,10 +7,11 @@ namespace jsonValidator
     public class ProgramTest
     {
         [Fact]
-        public void FirstGreenTest()
+        public void ASimpleJson()
         {
+            var v = "\"This is a Json\"";
             bool expected = true;
-            bool actual = Program.ValidateJson();
+            bool actual = Program.ValidateJson(v);
             Assert.Equal(expected, actual);
         }
     }
