@@ -35,7 +35,7 @@ namespace jsonValidator
                 switch (input[i])
                 {
                     case '"':
-                        if ( i == 0 || input[i] - 1 == reverseSolidus ||  i == input.Length - 1)
+                        if ( i == 0 || input[i - 1] == reverseSolidus ||  i == input.Length - 1)
                         {
                             result = true;
                             continue;
@@ -53,9 +53,9 @@ namespace jsonValidator
                         }
                         else
                         {
-                            if(input[i] - 1 == reverseSolidus || input[i] + 1 == reverseSolidus
-                            || input[i] + 1 == quotationmark || input[i] + 1 == backspace || input[i] + 1 == formfeed
-                            || input[i] + 1 == newLine || input[i] + 1 == carriageReturn || input[i] + 1 == horizontalTab)
+                            if(input[i - 1] == reverseSolidus || input[i + 1] == reverseSolidus
+                            || input[i + 1] == quotationmark || input[i + 1] == backspace || input[i + 1] == formfeed
+                            || input[i + 1] == newLine || input[i + 1] == carriageReturn || input[i + 1] == horizontalTab)
                             {
                                 result = true;
                                 continue;
